@@ -293,6 +293,7 @@ main {
   display: -ms-grid;
   display: grid;
   place-items: start;
+  margin: 0;
 }
 
 /* navbar */
@@ -604,6 +605,7 @@ table a {
 }
 
 /* my custom */
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -614,4 +616,10 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+.expenseHeader{
+  font-size: 22px;
+}
+.expenseData{
+  font-size:16px;
 }

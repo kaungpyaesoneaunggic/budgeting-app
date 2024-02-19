@@ -6,7 +6,14 @@ export async function logoutAction(){
   //delete the user
   deleteItem({
     key:'userName'
+  }),
+  deleteItem({
+    key:'expenses'
   })
+  deleteItem({
+    key:'budgets'
+  })
+  
 
   toast.success('User Logged Out')
 

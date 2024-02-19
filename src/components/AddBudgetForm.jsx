@@ -15,7 +15,7 @@ export default function AddBudgetForm() {
   },[isSubmitting])
   return (
     <div className="form-wrapper">
-      <h3 className="h3">Create budget</h3>
+      <h2 className="h3">Create budget</h2>
       <fetcher.Form method="post" className="grid-sm" ref={formRef}>
         <div className="grid-xs">
           <label htmlFor="newBudget">Budget Name</label>
