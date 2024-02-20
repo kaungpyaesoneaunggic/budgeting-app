@@ -38,6 +38,7 @@ export default function AddBudgetForm() {
               placeholder="e.g - $3.04"
               inputMode="decimal"
               min='0'
+              required
             />
           </div>
 
