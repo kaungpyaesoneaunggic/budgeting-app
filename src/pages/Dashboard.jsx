@@ -101,7 +101,7 @@ export default function Dashboard() {
                         b.createdAt - a.createdAt;
                       })}
                     />
-                    {expenses.length > 8 && (
+                    {expenses.length > 4 && (
                       <Link to="expenses" className="btn btn--dark">
                         View All Responses
                       </Link>
