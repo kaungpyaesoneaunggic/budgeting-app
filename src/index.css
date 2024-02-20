@@ -50,7 +50,7 @@ svg {
   --round-lg: 25px;
   --round-full: 100vmax;
 
-  /* toast customizations */
+  /* toast success color customizations */
   --toastify-color-success: hsl(var(--accent));
 }
 

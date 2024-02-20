@@ -27,7 +27,7 @@ export default function AddBudgetForm() {
             ref={focusRef}
             required
           />
-          <input type="hidden" name="_action" value="createBudget" />
+          <input type="hidden" name="_action" value="createBudget"/>
           <div className="grid-xs">
             <label htmlFor="newBudgetAmount">Amount</label>
             <input //spinner is disabled in css
@@ -37,6 +37,7 @@ export default function AddBudgetForm() {
               id="newBudgetAmount"
               placeholder="e.g - $3.04"
               inputMode="decimal"
+              min='0'
             />
           </div>
 
