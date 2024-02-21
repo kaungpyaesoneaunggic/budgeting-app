@@ -1,6 +1,6 @@
 import { CurrencyDollarIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useRef, useState } from "react";
-import { Form, useFetcher, useLoaderData } from "react-router-dom";
+import { Form, useFetcher, useLoaderData, useSubmit } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function AddBudgetForm() {
@@ -24,13 +24,14 @@ export default function AddBudgetForm() {
   // Budget same name checker
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    if (budgets.some((budget) => budget.name === budgetName)) {
+    if (budgets.map((budget) => budget.name).includes(budgetName)) {
+      console.log(budgets)
+      console.log(budgetName)
       toast.error("Budget with the same name already exists!");
       return;
     }
     try {
-      await fetcher.submitForm();
+      await fetcher.submit(event.target, { method: "post" })
     } catch (error) {
       toast.error("Error submitting form.");
       console.log("Error submitting form:", error);
@@ -40,8 +41,8 @@ export default function AddBudgetForm() {
     <div className="form-wrapper">
       <h2 className="h3">Create budget</h2>
       <fetcher.Form
-        onSubmit={handleSubmit}
         method="post"
+        onSubmit={handleSubmit}
         className="grid-sm"
         ref={formRef}
       >
@@ -72,7 +73,7 @@ export default function AddBudgetForm() {
             />
           </div>
 
-          <button className="btn btn--dark" disabled={isSubmitting}>
+          <button type="submit" className="btn btn--dark" disabled={isSubmitting}>
             <span>Create Budget</span>
             <CurrencyDollarIcon width={20} />
           </button>
